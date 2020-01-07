@@ -41,21 +41,27 @@
     <div class="container mx-auto px-5 lg:max-w-screen">
         <div class="flex items-center flex-col lg:flex-row">
             <a href="/" class="flex items-center no-underline text-brand">
-                <img src="https://laravel.com/img/logomark.min.svg" class="w-10">
-
-                <img class="text-xl ml-3 w-24" src="https://laravel.com/img/logotype.min.svg" alt="">
+                <img class="text-xl ml-3 w-24" src="https://www.revenuearchitects.com/wp-content/uploads/2017/02/Blog_pic-705x399.png" alt="">
             </a>
 
             <div class="lg:ml-auto mt-10 lg:mt-0 flex items-center">
-                <a href="/" class="no-underline hover:underline uppercase">Home</a>
-                <a href="/releases" class="ml-5 no-underline hover:underline uppercase">Releases</a>
-                <a href="/forge" class="ml-5 no-underline hover:underline uppercase">Forge</a>
-                <a href="/envoyer" class="ml-5 no-underline hover:underline uppercase">Envoyer</a>
+                @if (Route::has('login'))
+                    <div class="top-right links">
+                        @auth
+                            <a href="{{ url('/home') }}">Admin panel</a>
+                        @else
+                            <a href="{{ route('login') }}">Login</a>
+
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}">Register</a>
+                            @endif
+                        @endauth
+                    </div>
+                @endif
             </div>
         </div>
     </div>
 </header>
-{{--@foreach($posts as $post)--}}
 
 <div class="container mx-auto px-5 lg:max-w-screen-sm mt-20">
     <h1 class="mb-5 font-sans">{{$post->subject}}</h1>
@@ -78,12 +84,11 @@
         </div>
     </div>
 </div>
-{{--@endforeach--}}
 
 <div class="border-t border-lighter mt-20">
     <div class="container mx-auto px-5 lg:max-w-screen">
         <div class="text-muted py-10 text-center">
-            Follow the <a href="/feed">RSS Feed</a>.
+            Blog <a href="#">2020</a>.
         </div>
     </div>
 </div>

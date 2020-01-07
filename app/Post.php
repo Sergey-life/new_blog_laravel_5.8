@@ -2,9 +2,12 @@
 
 namespace App;
 
+use App\Traits\Multitenantable;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $fillable = ['subject', 'hort_description','text', 'author'];
+    use Multitenantable;
+
+    protected $fillable = ['subject', 'hort_description','text', 'author', 'created_by_user_id'];
 }

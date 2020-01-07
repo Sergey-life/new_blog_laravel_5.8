@@ -19,6 +19,8 @@ class CreatePostsTable extends Migration
             $table->string('hort_description');
             $table->text('text');
             $table->string('author');
+            $table->unsignedInteger('created_by_user_id');
+            $table->foreign('created_by_user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

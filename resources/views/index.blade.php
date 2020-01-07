@@ -41,8 +41,6 @@
     <div class="container mx-auto px-5 lg:max-w-screen">
         <div class="flex items-center flex-col lg:flex-row">
             <a href="/" class="flex items-center no-underline text-brand">
-{{--                <img src="https://cdn.dribbble.com/users/1358255/screenshots/6956292/fishing.png" class="w-10">--}}
-
                 <img class="text-xl ml-3 w-24" src="https://www.revenuearchitects.com/wp-content/uploads/2017/02/Blog_pic-705x399.png" alt="">
             </a>
 
@@ -86,7 +84,7 @@
             <div class="flex items-center text-sm text-light">
                 <img src="https://download-cs.net/steam/download_avatar/3434" class="w-10 h-10 rounded-full" title="Taylor Otwell">
                 <span class="ml-2">{{$post->author}}</span>
-                <span class="ml-auto">{{$post->created_at}}</span>
+                <span class="ml-auto">{{$post->updated_at}}</span>
             </div>
         </div>
     </a>
@@ -97,7 +95,7 @@
 <div class="border-t border-lighter mt-20">
     <div class="container mx-auto px-5 lg:max-w-screen">
         <div class="text-muted py-10 text-center">
-            Follow the <a href="/feed">RSS Feed</a>.
+            Blog <a href="#">2020</a>.
         </div>
     </div>
 </div>
