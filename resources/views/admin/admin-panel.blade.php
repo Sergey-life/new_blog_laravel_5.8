@@ -24,7 +24,7 @@
                     <tr>
                         <td>{{$post->id}}</td>
                         <td>{{$post->subject}}</td>
-                        <td>{{$post->author}}</td>
+                        <td>{{$user->name}}</td>
                         <td>
                             <a href="{{route('posts.show', $post->id)}}">
                                 <i class="glyphicon glyphicon-eye-open"></i>

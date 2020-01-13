@@ -16,8 +16,8 @@
                     <br>
                     <textarea name="text" id="" cols="30" rows="10" class="form-control">{{ $post->text }}</textarea>
                     <br>
-                    <input type="text" class="form-control" name="author" value="{{ $post->author }}">
-                    <br>
+{{--                    <input type="text" class="form-control" name="author" value="{{ $post->author }}">--}}
+{{--                    <br>--}}
                     <button class="btn btn-warning">Submit</button>
                 </div>
                 {!! Form::close() !!}

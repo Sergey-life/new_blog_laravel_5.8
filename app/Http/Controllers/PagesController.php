@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\Authenticate;
 use App\Post;
+use Faker\Guesser\Name;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Http\Requests\createPostRequest;
+use Illuminate\Contracts\Auth\Authenticatable;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 class PagesController extends Controller
 {
     use ValidatesRequests;
@@ -17,23 +24,23 @@ class PagesController extends Controller
         return view('index', ['posts' => $posts]);
     }
 
-    public function article($id)
+    public function article( $id)
     {
         $myPost = Post::find($id);
 
-        return view('article', ['post' => $myPost]);
+            return view('article', ['post' => $myPost]);
     }
 
-    public function adminPanel()
+    public function adminPanel(Authenticatable $user)
     {
         $posts = Post::all();
 
-        return view('admin.admin-panel', ['posts' => $posts]);
+        return view('admin.admin-panel', ['posts' => $posts, 'user' => $user]);
     }
 
-    public function create()
+    public function create(Authenticatable $author)
     {
-        return view('admin.create');
+        return view('admin.create', ['author' => $author]);
     }
 
     public function store(CreatePostRequest $request)
@@ -56,7 +63,7 @@ class PagesController extends Controller
         $this->validate($request,[
             'subject' => 'required',
             'hort_description' => 'required',
-            'author' => 'required',
+//            'author' => 'required',
             'text' => 'required'
         ]);
 

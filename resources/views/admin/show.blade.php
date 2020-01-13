@@ -9,7 +9,7 @@
             <div class="col-md-12">
                 <h3>{{$post->subject}}</h3>
                 <p>{{$post->hort_description}}</p>
-                <p>{{$post->author}}</p>
+                <p>{{$post->name}}</p>
                 <p>
                     {{$post->text}}
                 </p>

@@ -80,12 +80,14 @@
                     {{$post->hort_description}}
                 </p>
             </div>
-
+{{--            @foreach($author as $authors)--}}
             <div class="flex items-center text-sm text-light">
                 <img src="https://download-cs.net/steam/download_avatar/3434" class="w-10 h-10 rounded-full" title="Taylor Otwell">
                 <span class="ml-2">{{$post->author}}</span>
+{{--                @endforeach--}}
                 <span class="ml-auto">{{$post->updated_at}}</span>
             </div>
+
         </div>
     </a>
 </div>

@@ -1,5 +1,5 @@
 <?php
-
+use App\User;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration
             $table->text('text');
             $table->string('author');
             $table->unsignedInteger('created_by_user_id');
-            $table->foreign('created_by_user_id')->references('id')->on('users');
+            $table->foreign('created_by_user_id')->references('name')->on('users');
             $table->timestamps();
         });
     }

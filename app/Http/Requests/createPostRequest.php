@@ -27,7 +27,7 @@ class createPostRequest extends FormRequest
             'subject' => 'required',
             'hort_description' => 'required',
             'text' => 'required',
-            'author' => 'required'
+//            'author' => 'required'
         ];
     }
 }

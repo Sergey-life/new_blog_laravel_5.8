@@ -74,6 +74,7 @@
         {{$post->text}}
     </div>
 
+{{--    @foreach($author as $authors)--}}
     <div class="mt-10 lg:flex items-center p-5 border border-lighter  rounded">
         <div class="w-full lg:w-1/6 text-center lg:text-left">
             <img src="https://download-cs.net/steam/download_avatar/3434" class="rounded-full">
@@ -83,6 +84,7 @@
             <div class="text-sm"><p>Автор</p></div>
         </div>
     </div>
+{{--    @endforeach--}}
 </div>
 
 <div class="border-t border-lighter mt-20">

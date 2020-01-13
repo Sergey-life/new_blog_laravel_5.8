@@ -16,7 +16,7 @@
                     <br>
                     <textarea name="text" id="" cols="30" rows="10" class="form-control">{{ old('text') }}</textarea>
                     <br>
-                    <input type="text" class="form-control" name="author" value="{{ old('author') }}">
+                    <input type="text" class="form-control" name="author" value="{{ $author->name }}{{ old('text') }}">
                     <br>
                     <button class="btn btn-success">Submit</button>
                 </div>
