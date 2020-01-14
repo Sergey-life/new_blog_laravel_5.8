@@ -11,13 +11,6 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
-//Route::get('/', 'PagesController@index');
-
-
 Route::get('/', 'PagesController@index');
 
 Route::get('/article/{id}', 'PagesController@article')->name('posts.article');
@@ -41,7 +34,4 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('posts/{id}/show', 'PagesController@show')->name('posts.show');
 
     Route::delete('posts/{id}/destroy', 'PagesController@destroy')->name('posts.destroy');
-
-//    Route::resource('posts', 'PagesController');
-
 });

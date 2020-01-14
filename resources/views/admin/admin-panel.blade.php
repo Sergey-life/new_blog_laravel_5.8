@@ -15,6 +15,7 @@
                         <td>ID</td>
                         <td>Title</td>
                         <td>Author</td>
+                        <td>Updated_at</td>
                         <td>Actions</td>
                     </tr>
                     </thead>
@@ -25,6 +26,7 @@
                         <td>{{$post->id}}</td>
                         <td>{{$post->subject}}</td>
                         <td>{{$user->name}}</td>
+                        <td>{{$post->updated_at}}</td>
                         <td>
                             <a href="{{route('posts.show', $post->id)}}">
                                 <i class="glyphicon glyphicon-eye-open"></i>
